@@ -1,0 +1,103 @@
+-- Web_User table
+INSERT INTO Web_User (Web_User_ID, First_Name, Last_Name, Email_ID, Age)
+VALUES 
+    ('WU001', 'Rashmi', 'Panchal', 'rashmi.panchal@example.com', 25),
+    ('WU002', 'Jugal', 'Chattriwala', 'jugal.chattriwala@example.com', 30),
+    ('WU003', 'Jainil', Doshi', 'jainil.doshi@example.com', 27),
+    ('WU004', 'Amit', 'Patel', 'amit.patel@example.com', 28),
+    ('WU005', 'Sara', 'Shah', 'sara.shah@example.com', 22);
+
+-- User_Phone_Number table
+INSERT INTO User_Phone_Number (Phone_Number, Web_User_ID)
+VALUES 
+    ('9949303201', 'WU001'),
+    ('9898123434', 'WU002'),
+    ('1290238934', 'WU003'),
+    ('9012233445', 'WU004'),
+    ('8797076757', 'WU005');
+
+-- Theatre table
+INSERT INTO Theatre (Theatre_ID, Name_of_Theatre, No_of_Screens, Area)
+VALUES 
+    ('T001', 'PVR Phoenix', 6, 'Ahemdabad'),
+    ('T002', 'Conplex', 8, 'Vadodra'),
+    ('T003', 'Cinepolis ', 4, 'Bhopal'),
+    ('T004', 'Rajhans', 5, 'Sciencecity'),
+    ('T005', 'INOX Forum', 6, 'Rajkot');
+
+-- Screen_Details table
+INSERT INTO Screen_Details (Screen_ID, No_of_Seats_Gold, No_of_Seats_Silver, Theatre_ID)
+VALUES 
+    ('S001', 100, 200, 'T001'),
+    ('S002', 150, 250, 'T002'),
+    ('S003', 120, 180, 'T003'),
+    ('S004', 80, 150, 'T004'),
+    ('S005', 90, 170, 'T005');
+
+-- Movie table
+INSERT INTO Movie (Movie_ID, Name)
+VALUES 
+    ('M001', 'Pathan'),
+    ('M002', 'KGF CAPTER 2'),
+    ('M003', 'Bahubali: The Conclusion'),
+    ('M004', 'DDLJ'),
+    ('M005', 'Mummy Returns');
+
+-- Movie_Details table
+INSERT INTO Movie_Details (Movie_ID, Language, Genre, Target_Audience)
+VALUES 
+    ('M001', 'English', 'Action', 'PG-13'),
+    ('M002', 'English', 'Drama', 'R'),
+    ('M003', 'Hindi', 'Epic', 'U/A'),
+    ('M004', 'Hindi', 'Romance', 'U'),
+    ('M005', 'English', 'Animation', 'U');
+--Show values
+INSERT INTO Show (Show_ID, Show_Time, Show_Date, Seats_Remaining_Gold, Seats_Remaining_Silver, Class_Cost_Gold, Class_Cost_Silver, Screen_ID, Movie_ID) 
+VALUES ('S001', '13:00:00', '2023-05-01', 20, 50, 300, 200, 'SC001', 'M001');
+
+INSERT INTO Show (Show_ID, Show_Time, Show_Date, Seats_Remaining_Gold, Seats_Remaining_Silver, Class_Cost_Gold, Class_Cost_Silver, Screen_ID, Movie_ID) 
+VALUES ('S002', '17:30:00', '2023-05-02', 25, 60, 300, 200, 'SC002', 'M002');
+
+INSERT INTO Show (Show_ID, Show_Time, Show_Date, Seats_Remaining_Gold, Seats_Remaining_Silver, Class_Cost_Gold, Class_Cost_Silver, Screen_ID, Movie_ID) 
+VALUES ('S003', '10:45:00', '2023-05-03', 15, 40, 250, 150, 'SC003', 'M003');
+
+INSERT INTO Show (Show_ID, Show_Time, Show_Date, Seats_Remaining_Gold, Seats_Remaining_Silver, Class_Cost_Gold, Class_Cost_Silver, Screen_ID, Movie_ID) 
+VALUES ('S004', '20:15:00', '2023-05-04', 10, 30, 350, 250, 'SC004', 'M004');
+
+INSERT INTO Show (Show_ID, Show_Time, Show_Date, Seats_Remaining_Gold, Seats_Remaining_Silver, Class_Cost_Gold, Class_Cost_Silver, Screen_ID, Movie_ID) 
+VALUES ('S005', '12:30:00', '2023-05-05', 18, 45, 300, 200, 'SC005', 'M005');
+
+--Booking Table
+INSERT INTO Booking (Booking_ID, Web_User_ID, Show_ID)
+VALUES
+('B001', 'WU001', 'S001'),
+('B002', 'WU002', 'S002'),
+('B003', 'WU003', 'S003'),
+('B004', 'WU001', 'S004'),
+('B005', 'WU002', 'S005');
+
+--Booking Detail Table
+
+INSERT INTO Booking_Detail (Booking_ID, No_of_Tickets, Total_Cost, Card_Number, Name_on_card)
+VALUES
+('B001', 2, 600, '1234567890123456', 'Rashmi Panchal'),
+('B002', 1, 200, '2345678901234567', 'Jugal Chhatrivala'),
+('B003', 3, 900, '3456789012345678', 'Jainil Doshi'),
+('B004', 4, 1200, '4567890123456789', 'Amit Patel'),
+('B005', 2, 600, '5678901234567890', 'Sara Shah');
+
+--Ticket Table
+INSERT INTO Ticket (Ticket_ID, Booking_ID, Class, Price)
+VALUES
+('T001', 'B001', 'G', 300),
+('T002', 'B001', 'G', 300),
+('T003', 'B002', 'S', 200),
+('T004', 'B003', 'G', 300),
+('T005', 'B003', 'G', 300),
+('T006', 'B003', 'G', 300),
+('T007', 'B004', 'G', 300),
+('T008', 'B004', 'G', 300),
+('T009', 'B004', 'G', 300),
+('T010', 'B004', 'S', 300),
+('T011', 'B005', 'G', 300),
+('T012', 'B005', 'S', 300);
